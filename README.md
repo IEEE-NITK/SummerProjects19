@@ -1,2 +1,2 @@
-# SummerProjects19
-IEEE Summer Mentorship Programmes under IEEE-NITK CompSoc for the Summer of 2019
+# Summer Mentorship Projects 2019
+IEEE Summer Mentorship Projects under IEEE-NITK CompSoc for the summer of 2019
