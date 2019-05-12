@@ -1,1 +1,1 @@
-# Add code for q1 here
+# Too lazy to write sample code
