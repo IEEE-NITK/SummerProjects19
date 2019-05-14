@@ -10,4 +10,4 @@ println("Hamming Distance = $uno")
 end
 n1=readline()
 n2=readline()
-hammingDistance(n1,n2)
+hammingDistance(parse(Int64,n1),parse(Int64,n2))

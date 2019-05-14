@@ -11,4 +11,4 @@ function collatzSequence(a)
  println("$a")
 end
 x=readline()
-collatzSequence(x)
+collatzSequence(parse(Int64,x))
