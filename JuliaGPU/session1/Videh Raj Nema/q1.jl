@@ -19,4 +19,4 @@ for i in arr
     end
 end
 
-println(count) #count will give required answer
+println(count)
