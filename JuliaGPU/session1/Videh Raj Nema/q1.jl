@@ -6,7 +6,7 @@ arr=[]
 
 while result!=1
         push!(arr,(result%2))
-        global result=div(result,2)
+        result=div(result,2)
 end
 push!(arr,1)
 
@@ -14,6 +14,7 @@ count=0
 
 for i in arr
     if i==1
+            global count
             count+=1
     end
 end
