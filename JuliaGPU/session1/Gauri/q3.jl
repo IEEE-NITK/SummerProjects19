@@ -4,8 +4,9 @@ function printasc(str)
 #    s = firstindex(str)
     l = lastindex(str)
     for i in 1:l
-        newstr*=string(Int(str[i]))
+        newstr*=string(Int(str[i]),base = 16)
     end
 #    println("$newstr")
 end
 str = readline()
+printasc(str)

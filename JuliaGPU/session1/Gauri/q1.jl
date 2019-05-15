@@ -10,4 +10,4 @@ function HammingDist(s1,s2)
 end
 s1=readline()
 s2=readline()
-HammingDistance(parse(Int64,s1),parse(Int64,s2))
+HammingDist(parse(Int64,s1),parse(Int64,s2))

@@ -1,7 +1,8 @@
 #2. Collatz Sequence of a no.
 function CollatzSequence(N)
     while N!=1
-        println("$N->")
+        print("$N->")
+
         if N%2==0
             N = trunc(Int64,N/2)
         else
@@ -9,6 +10,7 @@ function CollatzSequence(N)
 
         end
     end
+    println("$N->")
 end
 N=readline()
-CollatzSequence(parse(Int64,N))
+CollatzSequence(parse(Int64,N)
