@@ -1,5 +1,6 @@
 n=parse(Int64,readline())
 while n!=1
+    global n
     if n%2==0
         n=div(n,2)
     else
