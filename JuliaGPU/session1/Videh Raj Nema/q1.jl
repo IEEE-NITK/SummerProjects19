@@ -5,6 +5,7 @@ result=xor(x,y)
 arr=[]
 
 while result!=1
+        global result
         push!(arr,(result%2))
         result=div(result,2)
 end
