@@ -3,7 +3,7 @@ n = parse(UInt8, readline())
 c = xor(m,n)
 count = 0
 while c!=0
-  c = c & (c-1)
-  count = count+1
+  global c = c & (c-1)
+  global count = count+1
 end
 println(count)                 
