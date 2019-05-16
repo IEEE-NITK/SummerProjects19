@@ -11,6 +11,6 @@ function CollatzSequence(N)
     end
     println("$N->")
 end
-println("Enter number")
-N=readline()
-CollatzSequence(parse(Int64,N)
+#println("Enter number")
+#N=readline()
+#CollatzSequence(N)
