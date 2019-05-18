@@ -12,11 +12,11 @@ function partition(arr,start,stop)
                   return ind
               end
 
-function quicksort(arr,start,stop)
+function quicksort!(arr,start=1,stop=2^20)
                   if start<stop
                       ind=partition(arr,start,stop)
-                      quicksort(arr,start,ind-1)
-                      quicksort(arr,ind+1,stop)
+                      quicksort!(arr,start,ind-1)
+                      quicksort!(arr,ind+1,stop)
                   else
                       return
               end
@@ -35,6 +35,6 @@ using BenchmarkTools
 
 @time sort(arr)
 
-@time quicksort(arr,1,2^20)
+@time quicksort!(arr)
 
-#@benchmark quicksort(arr,1,2^20)  #gives result of custom sorting function
+#@benchmark quicksort!(arr,1,2^20)  #gives result of custom sorting function
