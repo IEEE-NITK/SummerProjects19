@@ -30,14 +30,16 @@ function squareroot(num)
 a=rand(2^20)
 b=rand(2^20)
 
-array_sqrt!(num)=return squareroot(num)      
 
-a=array_sqrt!.(a)
+array_sqrt!(a)= return squareroot.(a)
 
-builtin!(num)=return sqrt(num)      
+a=array_sqrt!(a)
 
-b=builtin!.(b)
 
-@time builtin(b)
+builtin!(b)=return sqrt.(b)      
 
-@time array_sqrt(a)
+b=builtin!(b)
+
+@time builtin!(b)
+
+@time array_sqrt!(a)
