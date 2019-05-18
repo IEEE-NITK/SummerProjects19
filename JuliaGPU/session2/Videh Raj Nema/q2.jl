@@ -48,6 +48,6 @@ builtin(b)= begin
       return l
       end
 
-@test array_sqrt(a)==builtin(a)
+@test array_sqrt(a) ≈ builtin(a)
 
 isapprox(array_sqrt(a),builtin(a))
