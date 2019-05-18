@@ -30,8 +30,24 @@ function squareroot(num)
 
 using Test
 
-@test squareroot(16)==sqrt(16)
+a=rand(2^20)
 
-@test squareroot(10)==sqrt(10)
+array_sqrt(a)= begin
+              l=[]
+              for each in a
+                push!(l,squareroot(each))
+      end
+      return l
+      end
 
-isapprox(squareroot(10),sqrt(10))
+builtin(b)= begin
+              l=[]
+              for each in a
+                push!(l,sqrt(each))
+      end
+      return l
+      end
+
+@test array_sqrt(a)==builtin(a)
+
+isapprox(array_sqrt(a),builtin(a))
