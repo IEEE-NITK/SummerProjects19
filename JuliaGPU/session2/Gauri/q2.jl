@@ -1,24 +1,24 @@
-#using Test
+using Test
 
-function bssqr(x)
+function bs_sqrt(x)
     if x<1
         return 0
     start = 1
     stop = x
     while(start<=stop)
-        mid = (start+stop)/2
+        mid = (start+stop)//2
         if (mid*mid)==x
-            return mid
+            ans = mid
+            return ans
             break
         elseif (mid*mid)<x
-            start = mid
+            start = mid+1
+            ans = mid
         else
-            stop = mid
+            stop = mid-1
         end
     end
 end
 end
-
-println("Enter the value of x")
-bssqr(x)
-println("Square root of $x is $mid")
+@test bs_sqrt(x)
+@test sqrt(x)
