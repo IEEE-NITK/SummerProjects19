@@ -30,13 +30,21 @@ function squareroot(num)
 a=rand(2^20)
 b=rand(2^20)
 
-array_sqrt(a)=for each=1:(size(a)[1])
+#=array_sqrt(a)=for each=1:(size(a)[1])
            a[each]=squareroot(a[each])
-      end
+      end=#    
 
-builtin(b)=for each=1:(size(a)[1])
-            a[each]=sqrt(a[each])
-      end
+array_sqrt!(num)=return squareroot(num)      
+
+a=array_sqrt!.(a)
+
+#=builtin(b)=for each=1:(size(b)[1])
+            b[each]=sqrt(b[each])
+      end=#
+
+builtin!(num)=return sqrt(num)      
+
+b=builtin!.(b)
 
 @time builtin(b)
 
