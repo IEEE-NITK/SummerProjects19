@@ -35,16 +35,8 @@ function rootinator(num)
 	end
 	return(ans)
 end
-
-array_sqrt(arr)=	begin
-				len=lastindex(arr)
-				println("Using custom root fn")
-				for i in 1:len
-					k=rootinator(arr[i])
-					arr[i]=k
-					#println(arr[i])
-				end
-			end
+println("Using custom sqrt fn")
+array_sqrt(arr)=rootinator.(arr)
 
 #funcroot(arr)= begin
 #				len=lastindex(arr)

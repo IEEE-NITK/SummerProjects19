@@ -23,7 +23,7 @@ function rootinator(num)
 		#step=step+1
 	end
 	inc=0.1
-	prec=15#for Int64, ig
+	prec=7
 	#step=0
 	for i in 1:prec
 		while(ans*ans<=num)
@@ -41,7 +41,7 @@ println("INTERACTIVE ლ(=^･ω･^=)ლ")
 while(true)
 	println("pick a number, within reasonable limits.")
 	print(">>")
-	global q=parse(Int64,readline())
+	global q=parse(Float64,readline())
 	if q>0
 		break
 	end
