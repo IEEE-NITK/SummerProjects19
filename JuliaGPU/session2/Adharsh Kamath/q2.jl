@@ -29,7 +29,7 @@ function squareroot(number)
     return answer
     end
 println("Enter the number whose squareroot has to be evaluated:")
-number = parse(UInt16,readline())
+number = parse(Float64,readline())
 println("The squareroot using binary search is ",squareroot(number))
 println("The squareroot using default sqrt function is ",sqrt(number))
 println(@test squareroot(number) ≈ sqrt(number))
