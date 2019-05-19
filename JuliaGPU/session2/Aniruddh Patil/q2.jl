@@ -37,11 +37,9 @@ Test Passed
 =#
 
 
-@test Root(3,7) == sqrt(3)
+@test Root(3,7) ≈ sqrt(3)
 #=
-julia> @test Root(3,7) == sqrt(3)
-Test Failed at REPL[5]:1
-  Expression: Root(3, 7) == sqrt(3)
-   Evaluated: 1.732050800000001 == 1.7320508075688772
-ERROR: There was an error during testing
+julia> Root(3,7) ≈ sqrt(3)
+true
 =#
+
