@@ -5,21 +5,35 @@ using BenchmarkTools
 arr = rand(Int, 1048576)    #2^20=1048576
 len = lastindex(arr)
 
-#Insertion SORT!
-function insort!(a)
-	len=lastindex(a)
-	for i in  2:len
-		key=a[i]
-		j = i-1
-		while j>=1 && key<a[j]
-			a[j+1]=a[j]
-			j=j-1
-		end
-		a[j+1]=key
-	end
+function quicksort!(array)
+    if length(array) > 1
+        left=firstindex(array)
+        right=lastindex(array)
+
+        pivot= array[trunc(Int64,(left+right)/2)]
+        while left ≤ right
+            while array[left] < pivot
+                left= left + 1
+            end
+            while array[right] > pivot
+                right= right - 1
+            end
+            if left ≤ right
+                array[left], array[right]=array[right], array[left]
+                left= left + 1
+                right= right - 1
+            end
+        end
+        l=firstindex(array)
+        h=lastindex(array)
+        quicksort!(array[l:right])
+        quicksort!(array[left:h])
+    else
+        return(array)
+    end
 end
 
 println("Built in sort function")
 println(@benchmark sort(arr))
-println("Insertion sort implementation")
-println(@benchmark insort(arr))
+println("Quicksort implementation")
+println(@benchmark quicksort!(arr))
