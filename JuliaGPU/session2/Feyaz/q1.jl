@@ -3,8 +3,9 @@ arr = rand(Int, 1048576)    #2^20=1048576
 len = lastindex(arr)
 
 function quicksort!(array,low=1,high=length(array))
+    k=trunc(Int64, (high+low)/2)
     if high > low
-        pivot = array[rand(low:high)]
+        pivot = array[k]
         left, right = low, high
         while left <= right
             while array[left] < pivot
@@ -25,16 +26,7 @@ function quicksort!(array,low=1,high=length(array))
     return array
 end
 
-#println("Built in sort function")
-#println(@benchmark sort(arr))
-#println("Quicksort implementation")
-#println(@benchmark quicksort!(arr))
-a=rand(Int, 20)
-for x in a
-	println(x)
-end
-println("NEW LINE")
-quicksort!(a)
-for x in a
-	println(x)
-end
+println("Built in sort function")
+println(@benchmark sort(arr))
+println("Quicksort implementation")
+println(@benchmark quicksort!(arr))
