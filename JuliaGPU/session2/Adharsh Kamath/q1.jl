@@ -22,7 +22,7 @@ function quicksort!(A,i=1,j=length(A))  #quick-sort algorithm
 end
 
 RandomArray = rand(2^20)
-A = RandomArray
+A = copy(RandomArray)
 B = RandomArray
  print("Custom sort algorithm: ")
  @time quicksort!(A)
