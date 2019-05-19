@@ -10,27 +10,27 @@ bool vis [SIZE];
 
 void dijkstra(vector < pair < int , int > > v [SIZE])
 {
-                                                // set the vertices distances as infinity
-    memset(vis, false , sizeof vis);            // set all vertex as unvisited
+                                                
+    memset(vis, false , sizeof vis);            
     dist[1] = 0;
-    multiset < pair < int , int > > s;          // multiset do the job as a min-priority queue
+    multiset < pair < int , int > > s;          
     s=v.second;
-    s.insert({0 , 1});                          // insert the source node with distance = 0
+    s.insert({0 , 1});                          
 
     while(!s.empty()){
 
-        pair <int , int> p = *s.begin();        // pop the vertex with the minimum distance
+        pair <int , int> p = *s.begin();        
         s.erase(s.begin());
 
         int x = p.s; int wei = p.f;
-        if( vis[x] ) continue;                  // check if the popped vertex is visited before
+        if( vis[x] ) continue;                  
          vis[x] = true;
 
         for(int i = 0; i < v[x].size(); i++){
             int e = v[x][i].f; int w = v[x][i].s;
-            if(dist[x] + w < dist[e]  ){            // check if the next vertex distance could be minimized
+            if(dist[x] + w < dist[e]  ){            
                 dist[e] = dist[x] + w;
-                s.insert({dist[e],  e} );           // insert the next vertex with the updated distance
+                s.insert({dist[e],  e} );           
             }
         }
     }
