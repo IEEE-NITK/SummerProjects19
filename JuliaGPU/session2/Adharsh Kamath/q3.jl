@@ -1,5 +1,6 @@
 using Test
 Array = rand(2^20)
+ArrayCopy = copy(Array)
 
 function squareroot(number)
     startNum = 0
@@ -30,20 +31,7 @@ function squareroot(number)
     return answer
     end
 
-array_sqrt(Array) = begin
-       emptyArray = []
-       for each in Array
-         push!(emptyArray,squareroot(each))
-end
-return emptyArray
-end
+array_sqrt(Array) = @. Array = squareroot(Array)
 
-builtin(b) = begin
-    emptyArray = []
-       for each in Array
-         push!(emptyArray,sqrt(each))
-end
-return emptyArray
-end
-
-println(@test array_sqrt(Array) ≈ builtin(Array))
+println("The time taken by the custom function and the default function, respectively:")
+println(@test @time array_sqrt(Array) ≈ @time sqrt.(ArrayCopy))
