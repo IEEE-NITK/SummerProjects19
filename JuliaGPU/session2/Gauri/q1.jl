@@ -5,23 +5,25 @@
 #println("a after sorting:")
 function partition(a,p,r)
   x = a[r]
-  i = p-1
-  for j = p:r
+  i = p
+  for j = p:r-1
     if a[j]<=x
-      i=i+1
       a[i],a[j] = a[j],a[i]
+      i=i+1
     end
   end
-  a[i+1],a[r] = a[r],a[i+1]
-  return i+1
+  a[i],a[r] = a[r],a[i]
+  return i
 end
 
-function sortfunc!(a, p = 1, r = 2^20)
-  if low<high
+function sortfunc!(a, p=1, r=2^20)
+  if p<r
     q = partition(a,p,r)
-    sortfunc(a,p,q-1)
-    sortfunc(a,q+1,r)
-  end 
+    sortfunc!(a,p,q-1)
+    sortfunc!(a,q+1,r)
+  else
+    return
+  end
 end
 
 a = rand(2^20)
@@ -35,5 +37,5 @@ end
 #println(b)
 println("Custom quick sort function written by me: ")
 @time begin
-  sortfunc(a)
+  sortfunc!(a)
 end

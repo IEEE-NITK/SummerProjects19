@@ -1,4 +1,4 @@
-#Square root of a no. using binary search and comparing using Test 
+#Square root of a no. using binary search and comparing using Test
 
 function bs_sqrt(x)
     start=0
@@ -29,5 +29,6 @@ function bs_sqrt(x)
 end
 
 using Test
-@test bs_sqrt(9)==3
-@test sqrt(9)==3
+a = rand(2^3)
+@test sqrt.(a) ≈ bs_sqrt.(a)
+isapprox(sqrt.(a),bs_sqrt.(a))
