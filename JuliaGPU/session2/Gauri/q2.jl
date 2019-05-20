@@ -1,24 +1,33 @@
-using Test
-#=   =#
+#Square root of a no. using binary search
+
 function bs_sqrt(x)
-    if x<1
-        return 0
-    start = 1
-    stop = x
-    while(start<=stop)
-        mid = (start+stop)//2
-        if (mid*mid)==x
-            ans = mid
-            return ans
+    start=0
+    stop=x
+    ans=0
+    while start <= stop
+        mid=(start + stop)/2
+        if mid*mid==x
+            ans=mid
             break
-        elseif (mid*mid)<x
-            start = mid+1
+        end
+        if mid*mid<x
+            start = mid + 1
             ans = mid
         else
-            stop = mid-1
+            stop = mid - 1
         end
     end
+    inc=0.1;
+    for i=0:9
+        while ans*ans<=x
+            ans+=inc
+        end
+        ans=ans-inc
+        inc=inc/10
+    end
+    return ans
 end
-end
-@test bs_sqrt(x)
-@test sqrt(x)
+
+using Test
+@test bs_sqrt(9)==3
+@test sqrt(9)==3
