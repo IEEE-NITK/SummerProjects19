@@ -1,4 +1,4 @@
-#Square root of a no. using binary search
+#Square root of a no. using binary search and comparing using Test 
 
 function bs_sqrt(x)
     start=0
