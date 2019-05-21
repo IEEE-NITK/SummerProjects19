@@ -1,0 +1,32 @@
+#include <stdio.h>
+#include <string.h>
+
+char i1[] = "1c0111001f010100061a024b53535009181c";
+char i2[] = "686974207468652062756c6c277320657965";
+char output[38];
+char lookup[17] = "0123456789abcdef";
+
+
+unsigned int hextodec(char x)
+{
+  char val = 0;
+  if(x > 'a') { val = x - 'a' + 10; }
+  else if(x > 'A') { val = x - 'A' + 10; }
+  else { val = x - '0'; }
+  return val;
+}
+
+int main()
+{
+  unsigned int input_length = strlen(i1);
+  unsigned int n1 = 0, n2 = 0, op_num = 0;;
+  for(unsigned int i = 0; i < input_length; ++i)
+  {
+    n1 = hextodec(i1[i]);
+    n2 = hextodec(i2[i]);
+    op_num = n1 ^ n2;
+    output[i] = lookup[op_num];
+  }
+  printf("Input1: %s\nInput2: %s\nOutput: %s", i1, i2, output);
+  return 0;
+}
