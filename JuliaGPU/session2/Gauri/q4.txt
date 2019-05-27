@@ -1,0 +1,39 @@
+#Answer to q4 pf assignment-2 JuliaGPU
+
+(1)When A = [[2 1];[4 3];[6 5]]
+
+(i)Output(for sqrt.(A)):
+  3×2 Array{Float64,2}:
+   1.41421  1.0
+   2.0      1.73205
+   2.44949  2.23607
+  
+* Explanation:  This is because A is a 3X2 array and sqrt.(A) computes the square root of each element in the array.
+
+(ii)Output(for sort.(A)):
+  ERROR: MethodError: no method matching sort(::Int64)
+Closest candidates are:
+  sort(::AbstractUnitRange) at range.jl:961
+  sort(::AbstractRange) at range.jl:964
+  sort(::SparseArrays.SparseVector{Tv,Ti}; kws...) where {Tv, Ti} at C:\cygwin\home\Administrator\buildbot\worker\package_win64\build\usr\share\julia\stdlib\v1.1\SparseArrays\src\sparsevector.jl:1861
+
+* Explanation:  This is because A = [[2 1];[4 3];[6 5]] is a 3X2 array and default sort() in julia can sort only along one dimension.The correct way to make sort() work is sort!(A, dims = 2); A
+
+(2)When A = [[2, 1], [4, 3], [6, 5]]
+
+(i)Output(for sqrt.(A)):
+  ERROR: MethodError: no method matching sqrt(::Array{Int64,1})
+Closest candidates are:
+  sqrt(::Float16) at math.jl:1018
+  sqrt(::Complex{Float16}) at math.jl:1019
+  sqrt(::Missing) at math.jl:1070
+
+* Explanation: This is because A is a 3 element array and each element of A is an array of 2 elements. Since sqrt.(A) computes square root of each integer in array A, it cannot do the same for arrays within A and shows error.
+
+(ii)Output(for sort.(A)):
+  3-element Array{Array{Int64,1},1}:
+   [1, 2]
+   [3, 4]
+   [5, 6]
+
+* Explanation:  This is because A = [[2, 1], [4, 3], [6, 5]] is a 3-element array and sort.(A) sorts each array element of A.
