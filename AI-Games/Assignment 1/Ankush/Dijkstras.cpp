@@ -41,7 +41,7 @@ int Dijkstra(vector<pair<int,int> > *graph, int n, int start, int end)
 
 int main()
 {
-	int n,m,w;
+	int n,m,w,ans;
 	cout<<"Enter number of vertices"<<endl;
 	cin>>n;
 	cout<<"Enter number of edges"<<endl;
@@ -59,9 +59,9 @@ int main()
 	int start,end;
 	cout<<"Enter starting and ending node"<<endl;
 	cin>>start>>end;
-	Dijkstra(a, n, start, end);
+    ans=Dijkstra(a, n, start, end);
 	
-	
+	cout<<"The shortest distance is"<<ans;
 	
     getch();
 }
