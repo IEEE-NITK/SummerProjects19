@@ -1,0 +1,4 @@
+When a=[[2 1];[4 3];[6 5]], sqrt.(a) works and gives the individual square roots of each number as theyre individual elements of 
+the array however sort.(a) as individually sorting an element doesnt make sense!
+When a=[[2 1],[4 3],[6 5]], sqrt.(a) doesnt work because an element here is another array whose square root cannot be found out,
+however sort.(a) works because now an element here reprents the elements within an array which can be sorted!
