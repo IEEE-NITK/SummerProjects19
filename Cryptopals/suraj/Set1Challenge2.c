@@ -10,8 +10,8 @@ char lookup[17] = "0123456789abcdef";
 unsigned int hex2dec(char x)
 {
   char val = 0;
-  if(x > 'a') { val = x - 'a' + 10; }
-  else if(x > 'A') { val = x - 'A' + 10; }
+  if(x >= 'a') { val = x - 'a' + 10; }
+  else if(x >= 'A') { val = x - 'A' + 10; }
   else { val = x - '0'; }
   return val;
 }
