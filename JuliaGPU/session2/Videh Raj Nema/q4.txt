@@ -1,0 +1,9 @@
+Explainations of the output of the 4 following operations->
+
+sqrt.(A)-> works as it is an example of broacasting. A is a 6 element integer array and doing sqrt.(A) applies the square root operation on each element of array (but does not muatates the array).
+
+sort.(A)-> each element of A is an integer. Since here broadcasting is applied, sort() function acts upn each integer in A. Doing something like say sort(2) will produce an error.
+
+sqrt.(B)-> B is an 2d array with 3 rows and 2 columns. sqrt.(B) tries to apply the square root operation to each element of array B. But each element of B is itself an array of 2 elements. Broadcasting is required for those 2 elements also. Hence it shows error.
+
+sort.(B)-> each element of B is itself an array. sort.(B) does broadcasting and applies sorting operation to each element of B, which is an array. Hence that particular array gets sorted (but not mutated).
