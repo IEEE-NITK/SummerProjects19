@@ -1,7 +1,0 @@
-In case 1, where A =  [[2 1]; [4 3]; [6 5]], A is considered as a 3 X 2 matrix.
-So, sqrt.(A) translates to 'square-root(every element in the 3 X 2 matrix)' (Broadcasting). This does not cause any problem, since each element is an integer an its square-root can be calculated.
-But sort.(A) is translated to 'sort(every element in the matrix)'. This does not make any sense, since each element is a single integer.
-
-In case 2, where A =  [[2, 1], [4, 3], [6, 5]], A is considered as an array of 3 elements, where each element is an array of 2 elements in itself.
-So, sqrt.(A) translates to 'square-root(every 1 X 2 array in this array)'. This is seen as ambiguous by the compiler, since each element is a 1 X 2 array. 
-But sort.(A) is broadcasted to every element, as 'sort(every 1 X 2 array in this array)' and sorting a 1 X 2 array makes sense. 
