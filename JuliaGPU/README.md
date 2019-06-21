@@ -1,6 +1,6 @@
 ## Installation
 
-We'll be using google colab to run our code. Colab already has CUDA-10 pre-installed but doesn't have all the necessary drivers. Create a new notebook, set the hardware accelerator to GPU, and run all the cells in [this notebook](https://colab.research.google.com/drive/1G3QsiIwDTtZZAg9nXIeebXUufzLYj-b2) to install julia and the necessary drivers for the session on colab (don't forget to set the hardware accelerator to GPU, it can be found under the "Change runtime type" option in the "Runtime" menu). The output of the last cell must include  ```Cuda compilation tools, release 10.0, V10.0.130```
+We'll be using google colab to run our code. Colab already has CUDA-10 pre-installed but doesn't have all the necessary drivers. Create a new notebook, set the hardware accelerator to GPU, and run all the cells in [this notebook](https://colab.research.google.com/drive/1G3QsiIwDTtZZAg9nXIeebXUufzLYj-b2) (thanks to [@jekbradbury](https://github.com/jekbradbury) who found this solution) to install julia and the necessary drivers for the session on colab (don't forget to set the hardware accelerator to GPU, it can be found under the "Change runtime type" option in the "Runtime" menu). The output of the last cell must include  ```Cuda compilation tools, release 10.0, V10.0.130```.
 
 After that, open a new notebook in the same session and upload [this notebook](julia-notebook.ipynb). This notebook will be your julia notebook where you write the code (similar to a python notebook but it's a julia notebook).  
 
